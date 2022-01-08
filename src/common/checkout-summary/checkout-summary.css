@@ -1,0 +1,24 @@
+.summary-content{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.summary-content> h4{
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-content > h5{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-content > h5 > span{
+    font-weight: 500;
+}
+
+.light-green{
+    color: lightgreen;
+}

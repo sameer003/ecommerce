@@ -1,0 +1,47 @@
+.item-container{
+    display: flex;
+    border: 1px solid lightgrey;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.item-container > img {
+        border-bottom: 1px solid lightgray;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+}
+
+.item-container > .item-details {
+    width: calc(100% - 150px);
+    padding: 10px;
+}
+
+.price-bar > p{
+    margin-right: 5px;
+}
+
+.quantity{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+}
+
+.quantity > .icon {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0px 10px;
+    border: 2px solid lightgray;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.quantity > .icon:hover {
+    opacity: 0.8;
+}
+
+.qty-input{
+    width: 40px;
+    outline: none;
+    border: 2px solid lightgrey;
+}

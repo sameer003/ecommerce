@@ -1,0 +1,83 @@
+[
+    {
+        "name":"PW 160 Slip-On men's fitness walking shoes - grey",
+        "price":"1,999",
+        "mrp":"2,799",
+        "discount":"30%",
+        "product_image":"8500477",
+        "category":"shoe"
+    },
+    {
+        "name":"Men Walking Shoes Slip-on Soft 180 - Blue/White",
+        "price":"1,699",
+        "mrp":"2,399",
+        "discount":"30%",
+        "product_image":"8379852",
+        "category":"shoe"
+    },
+    {
+        "name":"Actiwalk Easy Leather Walking Shoes for men- Black",
+        "price":"2,499",
+        "mrp":"2,499",
+        "discount":"0%",
+        "product_image":"8576080",
+        "category":"shoe"
+    },
+    {
+        "name":"RW 500 Sports Walking Shoes for Men- Blue/Orange",
+        "price":"2,999",
+        "mrp":"4,999",
+        "discount":"40%",
+        "product_image":"8515352",
+        "category":"shoe"
+    },
+    {
+        "name":"Women Straight-Cut Full Zip Gym Jacket - Black",
+        "price":"1,099",
+        "mrp":"1,199",
+        "discount":"10%",
+        "product_image":"8560327",
+        "category":"jackets"
+    },
+    {
+        "name":"Women's High neck Gym Hoodie Zip Jacket 560 - Black",
+        "price":"1,899",
+        "mrp":"2,499",
+        "discount":"23%",
+        "product_image":"8578114",
+        "category":"jackets"
+    },
+    {
+        "name":"PW 540 Flex H+ Walking shoes for Men- BLUE",
+        "price":"2,499",
+        "mrp":"2,699",
+        "discount":"10%",
+        "product_image":"8523463",
+        "category":"shoe"
+    },
+    {
+        "name":"Men's Recycled Synthetic Short-Sleeved Hiking T-Shirt MH100",
+        "price":"399",
+        "mrp":" 699",
+        "discount":"40%",
+        "product_image":"8316244",
+        "category":"t-shirt"
+    },
+    {
+        "name":"Men's Cotton Gym T-shirt Regular fit 500 - White Print",
+        "price":"399",
+        "mrp":"699",
+        "discount":"40%",
+        "product_image":"864240",
+        "category":"t-shirt"
+    }
+    ,
+    {
+        "name":"Men's Basketball T-Shirt / Jersey TS500 - Red",
+        "price":"499",
+        "mrp":"599",
+        "discount":"10%",
+        "product_image":"8590884",
+        "category":"t-shirt"
+    }
+]
