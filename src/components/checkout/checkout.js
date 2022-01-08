@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './checkout.css';
 import CheckoutSummary from '../../common/checkout-summary/checkout-summary';
 import CheckoutItems from '../../common/checkout-items/checkout-items';
@@ -9,6 +9,12 @@ import { useNavigate } from "react-router-dom";
 export default function Checkout() {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.user.cart);
+  const loggedIn = useSelector((state) => state.user.loggedIn);
+  useEffect(() => {
+    if(!loggedIn){
+      navigate('/login')
+    }
+  }, [loggedIn])
   return (
     <div className="checkout">
       {!cart.length && (

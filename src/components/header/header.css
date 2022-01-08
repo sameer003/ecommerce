@@ -17,10 +17,15 @@
     font-style: italic;
     cursor: pointer;
 }
+
 .nav-links{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.nav-login{
+    cursor: pointer;
 }
 
 .cart-icon{
