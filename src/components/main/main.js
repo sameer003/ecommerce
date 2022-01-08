@@ -17,19 +17,26 @@ export default function Main() {
       .then((response) => response.json())
       .then((data) => {
         dispatch(initializeProducts(data));
-        setTimeout(()=>setShowloader(false), 1000)
+        setTimeout(() => setShowloader(false), 1000);
       });
   }, [dispatch]);
 
   const onAddToCart = (product) => {
-    dispatch(addToCart(product))
-  }
+    dispatch(addToCart(product));
+  };
   return (
     <div className="main-container">
-      {showloader && <Loader/>}
-      {!showloader && products.map((product) => {
-        return <Card key={product.id} product={product} onAddToCart={() => onAddToCart(product)} />;
-      })}
+      {showloader && <Loader />}
+      {!showloader &&
+        products.map((product) => {
+          return (
+            <Card
+              key={product.id}
+              product={product}
+              onAddToCart={() => onAddToCart(product)}
+            />
+          );
+        })}
     </div>
   );
 }

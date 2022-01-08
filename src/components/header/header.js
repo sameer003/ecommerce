@@ -24,7 +24,8 @@ export default function Header() {
       </div>
 
       <div className="nav-links">
-        <p className="nav-login" onClick={()=> navigate("/login")}>Login</p>
+        {!loggedIn && <p className="nav-login" onClick={()=> navigate("/login")}>Login</p>}
+        {loggedIn && <p className="nav-login" onClick={()=> navigate("/my-account")}>My Account</p>}
         <div className="cart">
           {cart.length > 0 && <p className="counter">{cart.length}</p>}
           <img src="./cart_icon.png" alt="cart_icon" className="cart-icon" onClick={handleClick}/>
