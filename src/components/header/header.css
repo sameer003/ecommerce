@@ -6,12 +6,16 @@
     height: 100px;
     align-items: center;
     padding: 0px 100px;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
 }
 
 .logo{
     font-size: large;
     font-weight: bold;
     font-style: italic;
+    cursor: pointer;
 }
 .nav-links{
     display: flex;
@@ -23,4 +27,21 @@
     width:50px;
     height: 50px;
     padding: 5px;
+}
+.cart{
+    position: relative;
+    cursor: pointer;
+}
+.counter{
+    color: #fff;
+    font-weight: 500;
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    top: -3px;
+    background: #000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
 }

@@ -1,22 +1,25 @@
 import React from 'react'
 import './checkout-items.css';
 import Item from './item/item';
-const item = {
-    "name":"Women's High neck Gym Hoodie Zip Jacket 560 - Black",
-    "price":"1,899",
-    "mrp":"2,499",
-    "discount":"23%",
-    "product_image":"8578114",
-    "category":"jackets"
-}
+import { useSelector, useDispatch } from "react-redux";
+import { updateQuantity, removeFromCart } from '../../redux/reducers/user/user.actions';
+
 export default function CheckoutItems() {
+    const cart = useSelector((state) => state.user.cart.sort((a,b) =>  a.id - b.id ));
+    const dispatch = useDispatch();
+    const onUpdate = (id, qty) => {
+        dispatch(updateQuantity({id, qty}))
+    }
+
+    const onRemove = (id) => {
+        dispatch(removeFromCart({id}))
+    }
+    
     return (
         <div>
-            <Item product={item}/>
-            <Item product={item}/>
-            <Item product={item}/>
-            <Item product={item}/>
-
+            {cart.map(item => {
+                return <Item key={item.id} product={item} onChange={(qty) => onUpdate(item.id, qty)} onRemove={()=> onRemove(item.id)}/>
+            })}
         </div>
     )
 }

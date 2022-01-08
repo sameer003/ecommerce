@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import './item.css'
+import React from 'react';
+import './item.css';
 
-export default function Item({product}) {
-  const [counter, setcounter] = useState(1)
+export default function Item({product, onChange, onRemove}) {
     return (
       <div className="item-container">
+        <div title="Remove" className='remove-icon' onClick={onRemove}>+</div>
         <img
           src={`./products/${product.product_image}.webp`}
           alt="product_image"
@@ -20,16 +20,22 @@ export default function Item({product}) {
         </div>
         <div className="quantity">
           Quantity{" "}
-          <div className="icon" onClick={() => setcounter(counter - 1)}>
+          <div className="icon" onClick={() => product.quantity > 1 && onChange(product.quantity - 1)}>
             -
           </div>
           <input
-            value={counter}
-            onChange={(e) => setcounter(e.target.value)}
+            value={product.quantity}
+            maxLength={2}
+            onKeyPress={(event) => {
+              if (!/[0-9]/.test(event.key)) {
+                event.preventDefault();
+              }
+            }}
+            onChange={(e) => onChange(e.target.value)}
             type="text"
             className="qty-input"
           />
-          <div className="icon" onClick={() => setcounter(counter+1)}>+</div>
+          <div className="icon"  onClick={() => product.quantity+1 < 100 && onChange(product.quantity+1)}>+</div>
         </div>
       </div>
     );

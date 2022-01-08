@@ -1,0 +1,1 @@
+export const PRODUCT_LIST_INIT = 'PRODUCT_LIST_INIT';

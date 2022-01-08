@@ -44,4 +44,16 @@
     width: 40px;
     outline: none;
     border: 2px solid lightgrey;
+    text-align: center;
+}
+
+.remove-icon{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+    transform: rotate(-45deg);
+    cursor: pointer;
 }
