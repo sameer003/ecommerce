@@ -3,7 +3,7 @@ import Card from "../../common/card/card";
 import { useSelector, useDispatch } from "react-redux";
 import { initializeProducts } from "../../redux/reducers/products/products.actions";
 import { addToCart } from "../../redux/reducers/user/user.actions";
-import Loader from "../../common/loader/loader";
+import Loader from "../../ui/loader/loader";
 import "./main.css";
 
 export default function Main() {
