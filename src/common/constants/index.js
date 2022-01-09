@@ -17,9 +17,11 @@ const CONSTANTS = {
     MY_ACCOUNT:"My Account",
     WELCOME_BACK:"Welcome Back!",
     ICONRRECT_USER_PWD:"Incorrect username or password",
+    NO_ORDERS_YET:"No Orders Yet!",
     ORDERS:"Orders!",
     ORDER:"Order",
-    PLACED_ON:"Placed On"
+    PLACED_ON:"Placed On",
+    TOTAL:"Total",
 }
 
 export default CONSTANTS;

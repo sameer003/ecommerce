@@ -1,10 +1,16 @@
-import { LOGIN, ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITY,SAVE_ORDER } from "./user.types";
+import {
+  LOGIN,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  UPDATE_QUANTITY,
+  SAVE_ORDER,
+} from "./user.types";
 import { addItemToCart, updateQuantity } from "./helper.util";
 
 const INITIAL_STATE = {
-  loggedIn:false,
-  orders:[],
-  cart:[]
+  loggedIn: false,
+  orders: [],
+  cart: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -33,8 +39,16 @@ const reducer = (state = INITIAL_STATE, action) => {
     case SAVE_ORDER:
       return {
         ...state,
-        cart:[],
-        orders: [...state.orders, {order_id:Date.now(), created_at:new Date(), item: action.payload}],
+        cart: [],
+        orders: [
+          ...state.orders,
+          {
+            order_id: Date.now(),
+            created_at: new Date(),
+            total: action.payload.total,
+            item: action.payload.cart,
+          },
+        ],
       };
 
     default:

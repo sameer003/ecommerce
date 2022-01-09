@@ -4,6 +4,7 @@ import { login } from "../../redux/reducers/user/user.actions";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import CONSTANTS from '../../common/constants';
+import Input from "../../ui/input/input";
 
 const USERNAME = "ADMIN";
 const PASSWORD = "12345";
@@ -40,7 +41,7 @@ export default function Login() {
       <form className="form" onSubmit={handleOnSubmit}>
         <h4>{CONSTANTS.WELCOME_BACK}</h4>
         <div className="form-group row">
-          <input
+          <Input
             name="username"
             className="input"
             type="text"
@@ -49,7 +50,7 @@ export default function Login() {
           />
         </div>
         <div className="form-group row">
-          <input
+          <Input
             name="password"
             className="input"
             type="password"
@@ -59,7 +60,7 @@ export default function Login() {
         </div>
         <div className="form-group row">
           <button className="btn" type="submit">
-          {CONSTANTS.LOGIN}
+            {CONSTANTS.LOGIN}
           </button>
         </div>
         {hasError && (

@@ -1,27 +1,46 @@
-import React from 'react';
+import React from "react";
 import CONSTANTS from "../../constants";
-import './item.css';
+import "./item.css";
 
-export default function Item({product, onChange, onRemove}) {
-    return (
-      <div className="item-container">
-        <div title="Remove" className='remove-icon' onClick={onRemove}>+</div>
-        <img
-          src={`./products/${product.product_image}.webp`}
-          alt="product_image"
-        />
-        <div className="item-details">
-          <h4 title={product.name}>
-            <b>{product.name}</b>
-          </h4>
-          <div className="price-bar">
-            <p>{CONSTANTS.RUPEES}{product.price}</p> <p>{CONSTANTS.RUPEES}{product.mrp}</p>
-            <p>({product.discount} {CONSTANTS.OFF})</p>
-          </div>
+export default function Item({ product, onChange, onRemove, actions = true }) {
+  return (
+    <div className="item-container">
+      {actions && (
+        <div title="Remove" className="remove-icon" onClick={onRemove}>
+          +
         </div>
+      )}
+      <img
+        src={`./products/${product.product_image}.webp`}
+        alt="product_image"
+      />
+      <div className="item-details">
+        <h4 title={product.name}>
+          <b>{product.name}</b>
+        </h4>
+        <div className="price-bar">
+          <p>
+            {CONSTANTS.RUPEES}
+            {product.price}
+          </p>{" "}
+          <p>
+            {CONSTANTS.RUPEES}
+            {product.mrp}
+          </p>
+          <p>
+            ({product.discount} {CONSTANTS.OFF})
+          </p>
+        </div>
+      </div>
+      {actions && (
         <div className="quantity">
-        {CONSTANTS.QUANTITY}{" "}
-          <div className="icon" onClick={() => product.quantity > 1 && onChange(product.quantity - 1)}>
+          {CONSTANTS.QUANTITY}{" "}
+          <div
+            className="icon"
+            onClick={() =>
+              product.quantity > 1 && onChange(product.quantity - 1)
+            }
+          >
             -
           </div>
           <input
@@ -36,8 +55,16 @@ export default function Item({product, onChange, onRemove}) {
             type="text"
             className="qty-input"
           />
-          <div className="icon"  onClick={() => product.quantity+1 < 100 && onChange(product.quantity+1)}>+</div>
+          <div
+            className="icon"
+            onClick={() =>
+              product.quantity + 1 < 100 && onChange(product.quantity + 1)
+            }
+          >
+            +
+          </div>
         </div>
-      </div>
-    );
+      )}
+    </div>
+  );
 }
