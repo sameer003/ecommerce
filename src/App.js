@@ -1,10 +1,10 @@
-import Header from "./components/header/header";
-import Main from "./components/main/main";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Checkout from "./components/checkout/checkout";
+import Header from "./components/header/header";
 import Login from "./components/login/login";
+import Main from "./components/main/main";
 import MyAccount from "./components/my-account/my-account";
+import "./App.css";
 
 function App() {
   return (

@@ -7,6 +7,7 @@ import { updateQuantity, removeFromCart } from '../../redux/reducers/user/user.a
 export default function CheckoutItems() {
     const cart = useSelector((state) => state.user.cart.sort((a,b) =>  a.id - b.id ));
     const dispatch = useDispatch();
+    
     const onUpdate = (id, qty) => {
         dispatch(updateQuantity({id, qty}))
     }

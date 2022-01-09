@@ -1,26 +1,29 @@
 import React, {useEffect} from 'react';
-import './checkout.css';
 import CheckoutSummary from '../../common/checkout-summary/checkout-summary';
 import CheckoutItems from '../../common/checkout-items/checkout-items';
 import { useSelector } from "react-redux";
 import Button from '../../ui/button';
 import { useNavigate } from "react-router-dom";
+import CONSTANTS from '../../common/constants';
+import './checkout.css';
 
 export default function Checkout() {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.user.cart);
   const loggedIn = useSelector((state) => state.user.loggedIn);
+
   useEffect(() => {
     if(!loggedIn){
       navigate('/login')
     }
-  }, [loggedIn])
+  }, [loggedIn, navigate]);
+
   return (
     <div className="checkout">
       {!cart.length && (
         <div className="return-home">
-          <h3>Please add some item to your cart!</h3>
-          <Button onClick={() => {navigate("/")}}>Return to Home</Button>
+          <h3>{CONSTANTS.PLEASE_ADD_ITEMS}</h3>
+          <Button onClick={() => {navigate("/")}}>{CONSTANTS.RETURN_TO_HOME}</Button>
         </div>
       )}
       {cart.length > 0 && (

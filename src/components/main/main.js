@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../common/card/card";
 import { useSelector, useDispatch } from "react-redux";
-import "./main.css";
 import { initializeProducts } from "../../redux/reducers/products/products.actions";
 import { addToCart } from "../../redux/reducers/user/user.actions";
 import Loader from "../../common/loader/loader";
+import "./main.css";
 
 export default function Main() {
   const products = useSelector((state) => state.products.list);
@@ -24,6 +24,7 @@ export default function Main() {
   const onAddToCart = (product) => {
     dispatch(addToCart(product));
   };
+  
   return (
     <div className="main-container">
       {showloader && <Loader />}

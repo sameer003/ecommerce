@@ -1,6 +1,7 @@
 import React from "react";
 import "./card.css";
 import Button from "../../ui/button";
+import CONSTANTS from "../constants";
 
 const Card = ({ product, onAddToCart }) => {
   return (
@@ -14,11 +15,11 @@ const Card = ({ product, onAddToCart }) => {
           <b>{product.name}</b>
         </h4>
         <div className="price-bar">
-          <p>Rs.{product.price}</p> <p>Rs.{product.mrp}</p>
-          <p>({product.discount} OFF)</p>
+            <p>{CONSTANTS.RUPEES}{product.price}</p> <p>{CONSTANTS.RUPEES}{product.mrp}</p>
+          <p>({product.discount} {CONSTANTS.OFF})</p>
         </div>
       </div>
-      <Button onClick={onAddToCart}>Add to Cart</Button>
+      <Button onClick={onAddToCart}>{CONSTANTS.ADD_TO_CART}</Button>
     </div>
   );
 };

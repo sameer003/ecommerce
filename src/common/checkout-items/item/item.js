@@ -1,4 +1,5 @@
 import React from 'react';
+import CONSTANTS from "../../constants";
 import './item.css';
 
 export default function Item({product, onChange, onRemove}) {
@@ -14,12 +15,12 @@ export default function Item({product, onChange, onRemove}) {
             <b>{product.name}</b>
           </h4>
           <div className="price-bar">
-            <p>Rs.{product.price}</p> <p>Rs.{product.mrp}</p>
-            <p>({product.discount} OFF)</p>
+            <p>{CONSTANTS.RUPEES}{product.price}</p> <p>{CONSTANTS.RUPEES}{product.mrp}</p>
+            <p>({product.discount} {CONSTANTS.OFF})</p>
           </div>
         </div>
         <div className="quantity">
-          Quantity{" "}
+        {CONSTANTS.QUANTITY}{" "}
           <div className="icon" onClick={() => product.quantity > 1 && onChange(product.quantity - 1)}>
             -
           </div>

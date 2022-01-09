@@ -4,9 +4,11 @@ import Button from '../../ui/button';
 import { useSelector, useDispatch } from "react-redux";
 import { saveOrder } from '../../redux/reducers/user/user.actions';
 import { useNavigate } from "react-router-dom";
+import CONSTANTS from "../constants";
 
 const shipping  = 100;
 export default function CheckoutSummary() {
+
   const cart = useSelector((state) => state.user.cart);
   const [details, setDetails] = useState({});
   const dispatch = useDispatch();
@@ -17,7 +19,6 @@ export default function CheckoutSummary() {
     let totalDiscount = 0;
     let total = 0;
     cart.forEach(item => {
-      console.log({item})
       totalMRP = totalMRP + (Number(item.mrp)*Number(item.quantity));
       totalDiscount = totalDiscount + ((Number(item.mrp) - Number(item.price))*Number(item.quantity));
       total = total + (Number(item.price)*Number(item.quantity));
@@ -39,20 +40,20 @@ export default function CheckoutSummary() {
 
     return (
       <div className="summary-content">
-        <h4>PRICE DETAILS (2 Items)</h4>
+        <h4>{CONSTANTS.PRICE_DETAILS} ({cart.length} {CONSTANTS.ITEMS})</h4>
         <h5>
-          Total MRP <span>{details.totalMRP}</span>
+        {CONSTANTS.TOTAL_MRP} <span>{details.totalMRP}</span>
         </h5>
         <h5>
-          Discount on MRP <span className='light-green'>-{details.totalDiscount}</span>
+        {CONSTANTS.DISCOUNT_ON_MRP} <span className='light-green'>-{details.totalDiscount}</span>
         </h5>
         <h5>
-          Shipping <span>{shipping}</span>
+        {CONSTANTS.SHIPPING} <span>{shipping}</span>
         </h5>
         <h4>
-          Total Amount <span>{details.total}</span>
+        {CONSTANTS.TOTAL_AMOUNT} <span>{details.total}</span>
         </h4>
-        <Button onClick={onSubmit}>CONFIRM ORDER</Button>
+        <Button onClick={onSubmit}>{CONSTANTS.CONFIRM_ORDER}</Button>
       </div>
     );
 }
