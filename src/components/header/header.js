@@ -9,6 +9,8 @@ export default function Header() {
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const navigate = useNavigate();
 
+  // navigate to checkout if user logged in 
+  // else redirect to login screen
   function handleClick() {
     if (loggedIn) {
       navigate("/checkout");

@@ -12,6 +12,7 @@ export default function Checkout() {
   const cart = useSelector((state) => state.user.cart);
   const loggedIn = useSelector((state) => state.user.loggedIn);
 
+  // if user bis not logged in redirect to login screen
   useEffect(() => {
     if(!loggedIn){
       navigate('/login')

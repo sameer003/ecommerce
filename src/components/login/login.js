@@ -14,6 +14,9 @@ export default function Login() {
   const [hasError, setHasError] = useState(false);
   const cart = useSelector((state) => state.user.cart);
 
+  // login user with validation
+  // if cart has item redirect to checkout 
+  // else redirect to home
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (

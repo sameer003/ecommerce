@@ -7,7 +7,8 @@ import "./my-account.css";
 export default function MyAccount() {
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const orders = useSelector((state) => state.user.orders);
-
+  
+  // if not logged in, redirect to login screen
   const navigate = useNavigate();
   useEffect(() => {
     if (!loggedIn) {

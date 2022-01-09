@@ -8,12 +8,15 @@ import CONSTANTS from "../constants";
 
 const shipping  = 100;
 export default function CheckoutSummary() {
-
+  // Get all items in the cart
   const cart = useSelector((state) => state.user.cart);
+  // price break-up details
   const [details, setDetails] = useState({});
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // calculate break-up details
   useEffect(() => {
     let totalMRP = 0;
     let totalDiscount = 0;
@@ -33,6 +36,7 @@ export default function CheckoutSummary() {
 
   }, [cart])
 
+    // Save order and redirect to home
     const onSubmit = () => {
       dispatch(saveOrder(cart));
       navigate("/");

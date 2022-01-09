@@ -11,6 +11,7 @@ export default function Main() {
   const [showloader, setShowloader] = useState(false);
   const dispatch = useDispatch();
 
+  // fetch all products and update the store
   useEffect(() => {
     setShowloader(true);
     fetch("./products.json")
@@ -21,6 +22,7 @@ export default function Main() {
       });
   }, [dispatch]);
 
+  // add item to cart, if already added increment the quantity
   const onAddToCart = (product) => {
     dispatch(addToCart(product));
   };
