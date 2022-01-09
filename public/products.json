@@ -88,5 +88,50 @@
     "product_image": "8590884",
     "id": "8590884",
     "category": "t-shirt"
+  },
+  {
+    "name": "ADULT BADMINTON RACKET BR 100 SET STARTER BLUE RED",
+    "price": "699",
+    "mrp": "999",
+    "discount": "30%",
+    "product_image": "8534437",
+    "id": "8534437",
+    "category": "sports"
+  },
+  {
+    "name": "Hex Dumbbell 10 kg",
+    "price": "2999",
+    "mrp": "3999",
+    "discount": "25%",
+    "product_image": "8353801",
+    "id": "8353801",
+    "category": "sports"
+  },
+  {
+    "name": "Fitness 2 kg Dumbbells Twin-Pack - Blue",
+    "price": "1099",
+    "mrp": "1599",
+    "discount": "30%",
+    "product_image": "8336573",
+    "id": "8336573",
+    "category": "sports"
+  },
+  {
+    "name": "Kids Cycle Original 100 8- 12 years (24 inch) - Grey Orange",
+    "price": "9999",
+    "mrp": "13999",
+    "discount": "29%",
+    "product_image": "8535151",
+    "id": "8535151",
+    "category": "cycle"
+  },
+  {
+    "name": "Kids Cycle ST100 6- 8 years (20inch) White",
+    "price": "6499",
+    "mrp": "8999",
+    "discount": "25%",
+    "product_image": "8535138",
+    "id": "8535138",
+    "category": "cycle"
   }
 ]
